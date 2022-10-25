@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fascinate&family=Hind+Siliguri:wght@300&family=Inconsolata:wght@200&family=Inter:wght@100&family=Kanit:wght@500;600&family=League+Gothic&family=Montserrat:wght@100;500&family=Oswald:wght@500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&family=Raleway:wght@100&family=Roboto+Slab:wght@100&family=Roboto:wght@100&family=Staatliches&family=Ubuntu:wght@300&display=swap');
+
 *{
   padding: 0;
   margin: 0;
@@ -6,21 +7,37 @@
 }
 
 body{
-  background-color: #fff;
+  background-color: rgb(240, 240, 240);
   font-family: 'Poppins', sans-serif;
-}
-
-.logo{
-  font-weight: bold;
-  font-size: 2.5em;
-  color: rgb(224, 151, 25);
-  padding: 15px 30px;
 }
 
 h3{
   font-weight: 400;
+  text-align: center;
+  margin: 30px 0px 15px 0px;
 }
 
-.p-footer{
-  font-size: 0.8em;
+.contenedor-universoBebes{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.contenedor-ofertas{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.contenedor-categorias{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+img{
+  width: 100%;
+  cursor: pointer;
 }

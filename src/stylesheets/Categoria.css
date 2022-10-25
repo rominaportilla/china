@@ -1,0 +1,22 @@
+.contenedor-categoria{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.contenedor-categoria:hover{
+    cursor: pointer;
+}
+
+.imagen-categoria{
+    height: 250px;
+    width: 350px;
+}
+
+.titulo-categoria{
+    padding: 10px 0px 10px 0px;
+}
+

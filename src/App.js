@@ -1,75 +1,63 @@
 import './App.css';
 import Navbar from './components/Navbar';
+import ItemListContainer from './components/ItemListContainer';
+import Categoria from './components/Categoria';
+import Footer from './components/Footer';
+import UniversoBebes from './components/UniversoBebes';
+import Ofertas from './components/Ofertas';
 
 function App() {
   return (
     <>
     <Navbar/>
-      <header className="App-header">
-        <h1 className='logo'>china</h1>
-      </header>
-      <div className='hero'></div>
-      <h3>ESPECIAL MASCOTAS</h3>
-      <div className='container-mascotas'>
-        <div className='div-mascotas'></div>
-        <div className='div-mascotas'></div>
-        <div className='div-mascotas'></div>
-      </div>
-      <h3>OFERTAS</h3>
-      <div className='container-ofertas'>
-        <div className='div-ofertas'></div>
-        <div className='div-ofertas'></div>
-        <div className='div-ofertas'></div>
-        <div className='div-ofertas'></div>
-      </div>
-      <h3>CATEGORÍAS</h3>
-      <div className='container-categorias'>
-        <div className='div-categorias'></div>
-        <div className='div-categorias'></div>
-        <div className='div-categorias'></div>
-        <div className='div-categorias'></div>
-        <div className='div-categorias'></div>
-        <div className='div-categorias'></div>
-      </div>
-      <h3>ENCONTRÁ LO QUE BUSCÁS</h3>
-      <div className='container-subcategorias'>
-
-      </div>
-      <h3>ENCONTRÁ TUS MARCAS FAVORITAS</h3>
-      <div className='container-marcas'>
-
-      </div>
-      <footer>
-        <p className='p-footer'>Copyright &copy; 2022 Romina Portilla. All Rights Reserved.</p>
-      </footer>
+    <ItemListContainer 
+      greeting={'你好，早上好'} />
+    <h3>UNIVERSO BEBÉS</h3>
+    <div className='contenedor-universoBebes'>
+    <UniversoBebes
+      subcategoria='COMIDA PARA EL BEBÉ'
+      imagen='comidaParaElBebe' />
+    <UniversoBebes
+      subcategoria='HIGIENE DEL BEBÉ'
+      imagen='higieneDelBebe' />
+    <UniversoBebes
+      subcategoria='PAÑALES'
+      imagen='pañales' />
+    </div>
+    <h3>OFERTAS</h3>
+    <div className='contenedor-ofertas'>
+    <Ofertas/>
+    <Ofertas/>
+    <Ofertas/>
+    <Ofertas/>
+    </div>
+    <h3>CATEGORÍAS</h3>
+    <div className='contenedor-categorias'>
+    <Categoria
+      categoria='CUIDADO PERSONAL'
+      imagen='cuidadoPersonal' />
+    <Categoria
+      categoria='BEBÉS'
+      imagen='bebes' />
+    <Categoria
+      categoria='LIMPIEZA'
+      imagen='limpieza' />
+    <Categoria
+      categoria='BEBIDAS'
+      imagen='bebidas' />
+    <Categoria
+      categoria='ALMACÉN'
+      imagen='almacen' />
+    <Categoria
+      categoria='MASCOTAS'
+      imagen='mascotas' />
+    </div>
+    <h3>ENCONTRÁ LO QUE BUSCÁS</h3>
+    <a href='https://www.mercadopago.com.ar/' target='_BLANK'><img src={require(`./imagenes/mercadoCredito.png`)} alt='Mercado Crédito'/></a>
+    <h3>ENCONTRÁ TUS MARCAS FAVORITAS</h3>
+    <Footer/>
     </>
-    
   );
 }
 
 export default App;
-
-
-/* import "./App.css";
-import BodyApp from "./components/BodyApp";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-importar itemlistcontainer
-
-export default function App() {
-  function saludar() {
-    alert("hola chiques");
-  }
-
-  function funcionLogin() {
-    alert("algo importante sobre el login");
-  }
-  return (
-    <div>
-      <Navbar conBoton={true} color={"#ddd"} funcionLogin={funcionLogin} />
-      <ItemListContainer/> MANDARLE EL GREETING
-      <BodyApp />
-      <Footer />
-    </div>
-  );
-} */

@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fascinate&family=Hind+Siliguri:wght@300&family=Inconsolata:wght@200&family=Inter:wght@100&family=Kanit:wght@500;600&family=League+Gothic&family=Montserrat:wght@100;500&family=Oswald:wght@500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&family=Raleway:wght@100&family=Roboto+Slab:wght@100&family=Roboto:wght@100&family=Staatliches&family=Ubuntu:wght@300&display=swap');
+
+.appbar{
+    background-color: rgb(250, 250, 250);
+}
+
+.logo{
+    font-weight: 800;
+    font-size: 2.5em;
+    color: rgb(224, 151, 25);
+    font-family: 'Poppins', sans-serif;
+    padding: 5px;
+}
+
+.categorias{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    padding-right: 20px;
+}
+
+.categorias li a{
+    text-decoration: none;
+    padding: 0 10px;
+    color: #cc0c1a;
+    font-size: 0.9em;
+}
+
+.categorias li a:hover{
+    background-color: #cc0c1911;
+    border-radius: 10px;
+}
+
+.search{
+    color: #cc0c1a;
+}
