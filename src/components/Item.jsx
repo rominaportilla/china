@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../stylesheets/Item.css';
 
 export default function Item({detalle}) {
+
     return (
     <div className='producto'>
         <img src={detalle.image} alt={detalle.title} />

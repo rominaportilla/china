@@ -1,0 +1,21 @@
+.producto img{
+    width: 200px;
+    height: 200px;
+}
+
+.producto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: #fff;
+    height: 300px;
+    width: 300px;
+}
+
+.producto-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

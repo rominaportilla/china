@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import ItemCount from './ItemCount';
 import ItemList from './ItemList';
 import Categoria from './Categoria';
 import Ofertas from './Ofertas';
@@ -35,15 +34,10 @@ const ItemListContainer = ({greeting}) => {
       console.log('mostramos productos')
     });
   }, [categoryId])
-  
-  const onAdd = (quantity)=>{
-    console.log(`El usuario agregó ${quantity} unidades`)
-  }
 
   return(
     <>
     <h2 style={{backgroundColor:'#cc0c1a', textAlign:'center', color:'white', height:'400px'}}>{greeting}</h2>
-    <ItemCount initial={1} stock={10} onAdd={onAdd} />
     <div>
     <ItemList data={data}/>
     </div>
