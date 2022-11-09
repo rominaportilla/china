@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import '../stylesheets/Navbar.css'
+import { Link } from 'react-router-dom';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -53,24 +54,23 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" className='appbar'>
+      <AppBar position="static" className='appbar' style={{ backgroundColor: 'rgb(240, 240, 240)', fontFamily:'Poppins'}}>
         <Toolbar>
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-            className="logo"
           >
-            china
+            <Link to={`/`} className='logo'>china</Link>
           </Typography>
           <ul className='categorias'>
-            <li><a href="http://google.com">CUIDADO PERSONAL</a></li>
-            <li><a href="http://google.com">BEBÉS</a></li>
-            <li><a href="http://google.com">LIMPIEZA</a></li>
-            <li><a href="http://google.com">BEBIDAS</a></li>
-            <li><a href="http://google.com">ALMACÉN</a></li>
-            <li><a href="http://google.com">MASCOTAS</a></li>
+            <li><Link to={`/category/cuidadoPersonal`} className='categoria'>CUIDADO PERSONAL</Link></li>
+            <li><Link to={`/category/bebes`} className='categoria'>BEBÉS</Link></li>
+            <li><Link to={`/category/limpieza`} className='categoria'>LIMPIEZA</Link></li>
+            <li><Link to={`/category/bebidas`} className='categoria'>BEBIDAS</Link></li>
+            <li><Link to={`/category/almacen`} className='categoria'>ALMACÉN</Link></li>
+            <li><Link to={`/category/mascotas`} className='categoria'>MASCOTAS</Link></li>
           </ul>
           <Search className='search'>
             <SearchIconWrapper className='search'>

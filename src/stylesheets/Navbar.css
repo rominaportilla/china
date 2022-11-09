@@ -6,10 +6,11 @@
 
 .logo{
     font-weight: 800;
-    font-size: 2.5em;
+    font-size: 2em;
     color: rgb(224, 151, 25);
     font-family: 'Poppins', sans-serif;
     padding: 5px;
+    text-decoration: none;
 }
 
 .categorias{
@@ -20,14 +21,14 @@
     padding-right: 20px;
 }
 
-.categorias li a{
+.categorias li .categoria{
     text-decoration: none;
     padding: 0 10px;
     color: #cc0c1a;
     font-size: 0.9em;
 }
 
-.categorias li a:hover{
+.categorias li .categoria:hover{
     background-color: #cc0c1911;
     border-radius: 10px;
 }
