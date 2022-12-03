@@ -1,91 +1,46 @@
-import React, {useState, useEffect} from 'react';
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import '../stylesheets/ItemListContainer.css';
 import ItemList from './ItemList';
-import Categoria from './Categoria';
-import Ofertas from './Ofertas';
-import UniversoBebes from './UniversoBebes';
-import { useParams } from 'react-router-dom';
-import { productos } from './data.js'
+import CategoriaContainer from './CategoriaContainer';
 
-const ItemListContainer = ({greeting}) => {
+
+const ItemListContainer = () => {
 
   const { categoryId } = useParams();
-
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const getData = new Promise ((res) => {
-      setTimeout(() => {
-        res(productos)
-      }, 2000);
-    });
-    
-    getData
-    .then((res) => {
-      if (categoryId) {
-        setData(res.filter((item) => item.category == categoryId))
-      }else{
-        setData(res)
-      }
+    const db = getFirestore();
+
+    let products;
+    if(categoryId){
+      products = query(collection(db, 'productos'), where('category', '==', categoryId));
+    }else{
+      products = collection(db, 'productos');
+    }
+
+    getDocs(products).then((res) =>{
+      const arrayProducts = res.docs.map((doc) =>{
+        return{
+          id: doc.id, image: doc.data().image, title: doc.data().title, description: doc.data().description, price: doc.data().price, category: doc.data().category
+        }
+      });
+      setData(arrayProducts);
     })
-    .catch((e) => {
-      console.error(e)
-    })
-    .finally(() => {
-      console.log('mostramos productos')
-    });
   }, [categoryId])
 
   return(
     <>
-    <h2 style={{backgroundColor:'#cc0c1a', textAlign:'center', color:'white', height:'400px'}}>{greeting}</h2>
+    <img style={{marginTop:'70px'}} src='/imagenes/hero0.png'/>
+    <h1 className='titulo-home'>China Supermarket</h1>
     <div>
     <ItemList data={data}/>
     </div>
-
-    <h3>UNIVERSO BEBÉS</h3>
-    <div className='contenedor-universoBebes'>
-    <UniversoBebes
-      subcategoria='COMIDA PARA EL BEBÉ'
-      imagen='comidaParaElBebe' />
-    <UniversoBebes
-      subcategoria='HIGIENE DEL BEBÉ'
-      imagen='higieneDelBebe' />
-    <UniversoBebes
-      subcategoria='PAÑALES'
-      imagen='pañales' />
-    </div>
-    <h3>OFERTAS</h3>
-    <div className='contenedor-ofertas'>
-    <Ofertas/>
-    <Ofertas/>
-    <Ofertas/>
-    <Ofertas/>
-    </div>
-    <h3>CATEGORÍAS</h3>
-    <div className='contenedor-categorias'>
-    <Categoria
-      categoria='CUIDADO PERSONAL'
-      imagen='cuidadoPersonal' />
-    <Categoria
-      categoria='BEBÉS'
-      imagen='bebes' />
-    <Categoria
-      categoria='LIMPIEZA'
-      imagen='limpieza' />
-    <Categoria
-      categoria='BEBIDAS'
-      imagen='bebidas' />
-    <Categoria
-      categoria='ALMACÉN'
-      imagen='almacen' />
-    <Categoria
-      categoria='MASCOTAS'
-      imagen='mascotas' />
-    </div>
-    <h3>ENCONTRÁ LO QUE BUSCÁS</h3>
-    <a href='https://www.mercadopago.com.ar/' target='_BLANK'><img src={require(`../imagenes/mercadoCredito.png`)} alt='Mercado Crédito'/></a>
-    <h3>ENCONTRÁ TUS MARCAS FAVORITAS</h3>
-    </>
+    <CategoriaContainer />
+    <img src='/imagenes/mercadoCredito.png' alt='Mercado Crédito'/>
+  </>
   )
 }
 

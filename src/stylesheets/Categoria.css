@@ -7,6 +7,10 @@
     border-radius: 5px;
 }
 
+.categorias{
+    margin: 60px 0px;
+}
+
 .contenedor-categoria:hover{
     cursor: pointer;
 }
@@ -18,5 +22,17 @@
 
 .titulo-categoria{
     padding: 10px 0px 10px 0px;
+    text-align: center;
+    color: black;
 }
 
+.categoria-cards{
+    text-decoration: none;
+}
+
+@media (max-width: 380px) {
+    .imagen-categoria {
+        height: 197px;
+        width: 277px;
+    }
+}

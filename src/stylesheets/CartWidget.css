@@ -1,3 +1,155 @@
 .icono-carrito{
     color: #cc0c1a;
 }
+
+.totalProducto-icono{
+    position: relative;
+    right: 14px;
+    bottom: 10px;
+    background-color: rgb(224, 151, 25);
+    font-weight: 500;
+    color: white;
+    padding: 2px 4px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+.cartWidget-icono{
+    text-decoration: none;
+    position: relative;
+}
+
+.carrito-title{
+    color: #cc0c1a;
+    font-weight: 700;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.carrito-container{
+    margin: 100px 20px 50px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.carrito{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.carritoVacio{
+    text-align: center;
+}
+
+.realizarCompra{
+    text-decoration: none;
+    font-size: 0.7em;
+    color: white;
+    background-color: #cc0c1a;
+    padding: 10px;
+    border-radius: 5px;
+    width: 146px;
+    align-self: center;
+    margin-top: 10px;
+
+}
+
+.carritoItem-container{
+    width: 60%;
+}
+
+.carritoItem{
+    margin: 20px 0px;
+    display: flex;
+    background-color: white;
+    justify-content: space-around;
+    padding: 10px;
+    align-items: center;
+}
+
+.carritoItem-image{
+    height: 150px;
+    width: 150px;
+}
+
+.productoCarrito-title{
+    font-weight: 500;
+}
+
+.productoCarrito-description{
+    font-size: 0.8em;
+}
+
+.totalCarrito-container{
+    margin-top: 20px;
+    width: 20%;
+    background-color: white;
+    height: 180px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.total-carrito{
+    font-size: 1.4em;
+    text-align: center;
+}
+
+.checkout-boton{
+    text-decoration: none;
+    font-size: 0.7em;
+    color: white;
+    background-color: #cc0c1a;
+    padding: 10px;
+    border-radius: 5px;
+    width: 80px;
+    align-self: center;
+    margin-top: 10px;
+}
+
+.vaciarCarrito-boton{
+    margin-top: 20px;
+    border: none;
+    background-color: white;
+    color: #cc0c1a;
+    cursor: pointer;
+    font-size: 0.7em;
+}
+
+.eliminarCarrito-boton{
+    height: 40px;
+    border: none;
+    background-color: white;
+    color: #cc0c1a;
+    cursor: pointer;
+    font-size: 0.7em;
+}
+
+@media (max-width: 745px) {
+    .total-carrito {
+        font-size: 1.1em;
+    }
+}
+@media (max-width: 615px) {
+    .carrito{
+        flex-direction: column;
+    }
+    .carritoItem-container {
+        width: 100%;
+    }
+    .carrito-title {
+        margin-bottom: 0px;
+    }
+    .totalCarrito-container {
+        width: 100%;
+    }
+}
+@media (max-width: 400px) {
+    .carritoItem-image {
+        height: 90px;
+        width: 90px;
+    }
+}

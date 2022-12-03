@@ -1,0 +1,47 @@
+.checkout-title{
+    color: #cc0c1a;
+    font-weight: 700;
+    font-size: 2em;
+}
+
+.checkout-container{
+    margin: 100px 20px 50px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout-subtitles{
+    font-size: 1.2em;
+    font-weight: 400;
+    margin: 20px;
+    text-align: center;
+}
+
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 70%;
+    align-self: center;
+}
+
+.form-container input{
+    width: 70%;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.realizarPedido{
+    font-size: 0.7em;
+    color: white;
+    background-color: #cc0c1a;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: none;
+}

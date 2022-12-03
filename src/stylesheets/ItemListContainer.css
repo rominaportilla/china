@@ -1,0 +1,9 @@
+.titulo-home{
+    margin: 40px 0px 10px 0px;
+    color: #cc0c1a;
+    text-align: center;
+}
+
+@media (max-width: 500px) {
+    
+}

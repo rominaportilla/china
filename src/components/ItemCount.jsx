@@ -1,4 +1,6 @@
-import React, { useState, useEffect} from 'react';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import IconButton from '@mui/material/IconButton';
+import React, { useState } from 'react';
 
 export default function ItemCount({initial, stock, onAdd}) {
   const [count, setCount] = useState(initial);
@@ -11,12 +13,18 @@ export default function ItemCount({initial, stock, onAdd}) {
   }
 
   return (
-    <div>
-    <button disabled={count >= stock} onClick={increase}> + </button>
-    <span>{count}</span>
+    <div className='itemCount-container'>
+    <p>Cantidad</p>
+    <div className='contador'>
     <button disabled={count <= 1} onClick={decrease}> - </button>
-    <button disabled={stock <= 0} onClick={()=>onAdd(count)}>
-      Agregar al carrito
+    <span>{count}</span>
+    <button disabled={count >= stock} onClick={increase}> + </button>
+    </div>
+    <button className='añadirCarrito-boton' disabled={stock <= 0} onClick={()=>onAdd(count)}>
+    <IconButton aria-label='shoppingCartIcon' variant='contained'>
+        <ShoppingCartIcon className='añadirCarrito-icono' />
+      </IconButton>
+      AÑADIR AL CARRITO
     </button>
     </div>
   )

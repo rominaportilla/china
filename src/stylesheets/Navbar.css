@@ -4,35 +4,101 @@
     background-color: rgb(250, 250, 250);
 }
 
+.menuHamburguesa-icono{
+    margin-left: auto;
+}
+
 .logo{
     font-weight: 800;
     font-size: 2em;
     color: rgb(224, 151, 25);
     font-family: 'Poppins', sans-serif;
     padding: 5px;
-    text-decoration: none;
+    margin-bottom: 5px;
 }
 
-.categorias{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    list-style: none;
-    padding-right: 20px;
+.logo-text{
+    color: rgb(224, 151, 25);
+    text-decoration: none;
+    position: relative;
+    z-index: 10000;
 }
 
-.categorias li .categoria{
+.logo-img{
     text-decoration: none;
-    padding: 0 10px;
+    position: relative;
+    right: 13px;
+    top: 7px;
+}
+
+.logo-img img{
+    width: 70px;
+    height: 50px;
+}
+
+.categoria{
+    text-decoration: none;
     color: #cc0c1a;
     font-size: 0.9em;
 }
 
-.categorias li .categoria:hover{
+.categoria .categoria-tab{
+    font-family: 'Poppins', sans-serif;
+}
+
+.categoria:hover{
     background-color: #cc0c1911;
     border-radius: 10px;
 }
 
 .search{
     color: #cc0c1a;
+}
+
+.search-container{
+    margin: 20px 0px;
+}
+
+.categorias-drawer{
+    padding: 15px 0px 0px 15px;
+    color: rgb(144, 144, 144);
+    font-size: 0.9em;
+    border-top: 1px solid rgb(144, 144, 144) ;
+}
+
+/* media queries */
+@media (max-width: 1200px) {
+    .navbar-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo-p{
+        order: 2;
+        margin: 0px 42px;
+    }
+    .menuHamburguesa-icono{
+        order: 1;
+        margin: 0;
+        position: relative;
+        top: 4px;
+    }
+    .cartWidget-icono{
+        order: 3;
+        position: relative;
+        top: 2px;
+    }
+}
+@media (max-width: 500px) {
+    .logo{
+        font-size: 1.7em;
+    }
+    .logo-img{
+        right: 11px;
+        top: 6px;
+    }
+    .logo-img img{
+        width: 60px;
+        height: 42px;
+    }
 }

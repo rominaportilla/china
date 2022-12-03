@@ -1,14 +1,14 @@
-import React from 'react';
-import CartWidget from './CartWidget';
-import { styled, alpha } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import '../stylesheets/Navbar.css'
+import { Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material';
+import AppBar from '@mui/material/AppBar';
+import InputBase from '@mui/material/InputBase';
+import { alpha, styled } from '@mui/material/styles';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import '../stylesheets/Navbar.css';
+import CartWidget from './CartWidget';
+import DrawerComponent from './DrawerComponent';
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -52,27 +52,36 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Navbar() {
-  return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" className='appbar' style={{ backgroundColor: 'rgb(240, 240, 240)', fontFamily:'Poppins'}}>
-        <Toolbar>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-          >
-            <Link to={`/`} className='logo'>china</Link>
-          </Typography>
-          <ul className='categorias'>
-            <li><Link to={`/category/cuidadoPersonal`} className='categoria'>CUIDADO PERSONAL</Link></li>
-            <li><Link to={`/category/bebes`} className='categoria'>BEBÉS</Link></li>
-            <li><Link to={`/category/limpieza`} className='categoria'>LIMPIEZA</Link></li>
-            <li><Link to={`/category/bebidas`} className='categoria'>BEBIDAS</Link></li>
-            <li><Link to={`/category/almacen`} className='categoria'>ALMACÉN</Link></li>
-            <li><Link to={`/category/mascotas`} className='categoria'>MASCOTAS</Link></li>
-          </ul>
-          <Search className='search'>
+
+  const theme = useTheme();
+  const isMatch = useMediaQuery(theme.breakpoints.down('lg'));
+  
+    return (
+    <React.Fragment>
+        <AppBar className='appbar' sx={{background: 'rgb(240, 240, 240)', fontFamily:'Poppins'}}>
+            <Toolbar className='navbar-container'>
+            <Typography className='logo-p'>
+              <div className='logo'>
+                <Link to={`/`} className='logo-text'>china</Link>
+                <Link to={`/`} className='logo-img'><img src="/imagenes/pucca-removebg-preview.png" alt=""/></Link>
+              </div>
+            </Typography>
+            {
+              isMatch ? (
+                <>
+                  <DrawerComponent />
+                </>
+              ) : (
+                <>
+                  <Tabs sx={{marginLeft: 'auto'}}>
+                    <Link to={`/category/cuidadoPersonal`} className='categoria'><Tab className='categoria-tab' label='CUIDADO PERSONAL'/></Link>
+                    <Link to={`/category/bebes`} className='categoria'><Tab className='categoria-tab' label='BEBÉS'/></Link>
+                    <Link to={`/category/limpieza`} className='categoria'><Tab className='categoria-tab' label='LIMPIEZA'/></Link>
+                    <Link to={`/category/bebidas`} className='categoria'><Tab className='categoria-tab' label='BEBIDAS'/></Link>
+                    <Link to={`/category/almacen`} className='categoria'><Tab className='categoria-tab' label='ALMACÉN'/></Link>
+                    <Link to={`/category/mascotas`} className='categoria'><Tab className='categoria-tab' label='MASCOTAS'/></Link>
+                  </Tabs>
+            <Search className='search'>
             <SearchIconWrapper className='search'>
               <SearchIcon className='search'/>
             </SearchIconWrapper>
@@ -82,9 +91,12 @@ export default function Navbar() {
               className='search'
             />
           </Search>
-          <CartWidget/>
-        </Toolbar>
-      </AppBar>
-    </Box>
-  );
+                </>
+              )
+            }
+            <CartWidget className='carrito-icono' />
+            </Toolbar>
+        </AppBar>
+    </React.Fragment>
+    )
 }

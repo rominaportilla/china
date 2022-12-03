@@ -1,8 +1,30 @@
-# Getting Started with Create React App
+# China Supermarket 
+## Tu supermercado online 🛒
+https://china-supermercado.web.app/
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Aplicación web destinada al comercio de bienes de consumo entre los que se encuentran alimentos, artículos de higiene, perfumería y limpieza.
+
+## Tecnologías utilizadas
+- HTML5
+- CSS3
+- React Js
+- Git
+- Git Hub
+
+## Librerías utilizadas
+- Material UI
+- React Router DOM
+- FireStore Database (from Firebase)
+
+## Scripts para instalar y correr el proyecto 
+### Para clonar el repositorio debe ejecutar en su consola el siguiente comando:
+`git clone https://github.com/rominaportilla/china.git`
+### Para instalar todas las librerías y dependencias:
+`npm install`
+### P
 
 In the project directory, you can run:
 

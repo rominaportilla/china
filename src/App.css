@@ -17,19 +17,6 @@ h3{
   margin: 30px 0px 15px 0px;
 }
 
-.contenedor-universoBebes{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-.contenedor-ofertas{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-
 .contenedor-categorias{
   display: flex;
   flex-direction: row;
