@@ -23,7 +23,7 @@
     color: #cc0c1a;
     font-weight: 700;
     font-size: 2em;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .carrito-container{
@@ -139,9 +139,6 @@
     }
     .carritoItem-container {
         width: 100%;
-    }
-    .carrito-title {
-        margin-bottom: 0px;
     }
     .totalCarrito-container {
         width: 100%;

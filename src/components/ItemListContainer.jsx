@@ -1,9 +1,9 @@
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import '../stylesheets/ItemListContainer.css';
-import ItemList from './ItemList';
 import CategoriaContainer from './CategoriaContainer';
+import ItemList from './ItemList';
 
 
 const ItemListContainer = () => {
@@ -33,13 +33,12 @@ const ItemListContainer = () => {
 
   return(
     <>
-    <img style={{marginTop:'70px'}} src='/imagenes/hero0.png'/>
+    <img className='hero-home' style={{marginTop:'70px'}} src='/imagenes/hero0.png' alt='hero'/>
     <h1 className='titulo-home'>China Supermarket</h1>
     <div>
     <ItemList data={data}/>
     </div>
     <CategoriaContainer />
-    <img src='/imagenes/mercadoCredito.png' alt='Mercado Crédito'/>
   </>
   )
 }

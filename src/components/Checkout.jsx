@@ -51,9 +51,9 @@ export default function Checkout() {
     }
 
     return (
-        <div style={{margin: '100px'}}>
-        {orderId ? ('Gracias por confiar en nosotros. Tu id de compra es: ' + orderId) : (
         <div className='checkout-container'>
+        {orderId ? ('Gracias por confiar en nosotros. Tu id de compra es: ' + orderId) : (
+        <div style={{display: 'flex', flexDirection: 'column'}}>
         <h1 className='checkout-title'>Checkout</h1>
         <div className='form-container'>
         <h2 className='checkout-subtitles'>Detalles de facturación</h2>

@@ -5,5 +5,11 @@
 }
 
 @media (max-width: 500px) {
-    
+    .hero-home{
+        display: none;
+    }
+    .titulo-home{
+        margin: 100px 0px 10px 0px;
+        font-size: 1.7em;
+    }
 }

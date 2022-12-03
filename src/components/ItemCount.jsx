@@ -14,12 +14,15 @@ export default function ItemCount({initial, stock, onAdd}) {
 
   return (
     <div className='itemCount-container'>
+    <div className='contador-container'>
     <p>Cantidad</p>
     <div className='contador'>
     <button disabled={count <= 1} onClick={decrease}> - </button>
     <span>{count}</span>
     <button disabled={count >= stock} onClick={increase}> + </button>
     </div>
+    </div>
+
     <button className='añadirCarrito-boton' disabled={stock <= 0} onClick={()=>onAdd(count)}>
     <IconButton aria-label='shoppingCartIcon' variant='contained'>
         <ShoppingCartIcon className='añadirCarrito-icono' />
